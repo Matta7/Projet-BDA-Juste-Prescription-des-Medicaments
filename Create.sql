@@ -88,6 +88,7 @@ Constraint PK_LABORATOIRE primary key (n_labo)
 CREATE TABLE medicament
 (id NUMBER NOT NULL,
 nom VARCHAR(60),
+notice_url VARCHAR(60),
 Constraint PK_MEDICAMENT primary key (id)
 );
 
@@ -111,15 +112,107 @@ CREATE TABLE trait_med
 (trait_id NUMBER NOT NULL,
 medic_id NUMBER NOT NULL,
 Constraint PK_TRAIT_MED primary key (trait_id, medic_id),
-Constraint FK_TRAIT_MED_MEDIC foreign key (medic_id) references medicament ()
+Constraint FK_TRAIT_MED_MEDIC foreign key (medic_id) references medicament (id)
 );
 
 
 -- A revoir ?
 CREATE TABLE indication 
 (id NUMBER NOT NULL,
-text VARCHAR(60),
+text VARCHAR(120),
 mal_code VARCHAR(30) NOT NULL,
+medic_id NUMBER NOT NULL,
 Constraint PK_INDICATION primary key (id),
+Constraint FK_INDICATION_MEDICAMENT foreign key (medic_id) references medicament (id),
 Constraint FK_INDICATION_MALADIE foreign key (mal_code) references maladie (code)
+);
+
+CREATE TABLE contre_indication
+(text VARCHAR(120),
+medic_id NUMBER NOT NULL,
+Constraint PK_CONTRE_INDICATION primary key (text, medic_id),
+Constraint FK_CONTRE_INDICATION_MED foreign key (medic_id) references medicament (id)
+);
+
+CREATE TABLE effet_indesirable
+(id NUMBER NOT NULL,
+text VARCHAR(120),
+Constraint PK_EFFET_INDESIRABLE primary key (id)
+);
+
+CREATE TABLE substance_active
+(id NUMBER NOT NULL,
+nom VARCHAR(30),
+descrip VARCHAR(120),
+Constraint PK_SUBSTANCE_ACTIVE primary key (id)
+);
+
+CREATE TABLE substance_contenu
+(medic_id NUMBER NOT NULL,
+subs_id NUMBER NOT NULL,
+Constraint PK_SUBSTANCE_CONTENU primary key (medic_id, subs_id),
+Constraint FK_SUBSTANCE_CONTENU_MED foreign key (medic_id) references medicament (id),
+Constraint FK_SUBSTANCE_CONTENU_SUB foreign key (subs_id) references substance_active (id)
+);
+
+CREATE TABLE classe_chimique
+(code VARCHAR(30) NOT NULL,
+parent VARCHAR(30),
+Constraint PK_CLASSE_CHIMIQUE primary key (code),
+Constraint FK_CLASSE_CHIMIQUE_PARENT foreign key (parent) references classe_chimique (code)
+);
+
+CREATE TABLE classe_pharmacologique
+(code VARCHAR(30) NOT NULL,
+parent VARCHAR(30),
+Constraint PK_CLASSE_PHARMA primary key (code),
+Constraint FK_CLASSE_PHARMA_PARENT foreign key (parent) references classe_pharmacologique (code)
+);
+
+CREATE TABLE substance_chimique
+(code VARCHAR(30) NOT NULL,
+subs_id NUMBER NOT NULL,
+Constraint PK_SUBSTANCE_CHIMIQUE primary key (code, subs_id),
+Constraint FK_SUBSTANCE_CHIMIQUE_CLASSE foreign key (code) references classe_chimique (code),
+Constraint FK_SUBSTANCE_CHIMIQUE_SUBS foreign key (subs_id) references substance_active (id)
+);
+
+CREATE TABLE substance_pharmacologique
+(code VARCHAR(30) NOT NULL,
+subs_id NUMBER NOT NULL,
+Constraint PK_SUBSTANCE_PHARMA primary key (code, subs_id),
+Constraint FK_SUBSTANCE_PHARMA_CLASSE foreign key (code) references classe_pharmacologique (code),
+Constraint FK_SUBSTANCE_PHARMA_SUBS foreign key (subs_id) references substance_active (id)
+);
+
+CREATE TABLE effet_connus_s
+(id NUMBER NOT NULL,
+subs_id NUMBER NOT NULL,
+Constraint PK_EFFET_CONNUS_S primary key (id, subs_id),
+Constraint FK_EFFET_CONNUS_S_EFF foreign key (id) references effet_indesirable (id),
+Constraint FK_EFFET_CONNUS_S_SUB foreign key (subs_id) references substance_active (id)
+);
+
+CREATE TABLE effet_connus_m
+(id NUMBER NOT NULL,
+medic_id NUMBER NOT NULL,
+Constraint PK_EFFET_CONNUS_M primary key (id, medic_id),
+Constraint FK_EFFET_CONNUS_M_EFF foreign key (id) references effet_indesirable (id),
+Constraint FK_EFFET_CONNUS_M_MED foreign key (medic_id) references medicament (id)
+);
+
+CREATE TABLE effet_connus_c
+(id NUMBER NOT NULL,
+chim_code VARCHAR(30) NOT NULL,
+Constraint PK_EFFET_CONNUS_C primary key (id, chim_code),
+Constraint FK_EFFET_CONNUS_C_EFF foreign key (id) references effet_indesirable (id),
+Constraint FK_EFFET_CONNUS_C_MED foreign key (chim_code) references classe_chimique (code)
+);
+
+CREATE TABLE effet_connus_p
+(id NUMBER NOT NULL,
+pharm_code VARCHAR(30) NOT NULL,
+Constraint PK_EFFET_CONNUS_P primary key (id, pharm_code),
+Constraint FK_EFFET_CONNUS_P_EFF foreign key (id) references effet_indesirable (id),
+Constraint FK_EFFET_CONNUS_P_MED foreign key (pharm_code) references classe_pharmacologique (code)
 );
