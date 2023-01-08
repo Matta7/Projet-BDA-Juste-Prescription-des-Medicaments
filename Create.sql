@@ -106,3 +106,20 @@ Constraint PK_DEVELOPPE primary key (n_med, medic_id),
 Constraint FK_DEVELOPPE_MEDECIN foreign key (n_med) references medecin (n_med),
 Constraint FK_DEVELOPPE_MEDICAMENT foreign key (medic_id) references medicament (id)
 );
+
+CREATE TABLE trait_med 
+(trait_id NUMBER NOT NULL,
+medic_id NUMBER NOT NULL,
+Constraint PK_TRAIT_MED primary key (trait_id, medic_id),
+Constraint FK_TRAIT_MED_MEDIC foreign key (medic_id) references medicament ()
+);
+
+
+-- A revoir ?
+CREATE TABLE indication 
+(id NUMBER NOT NULL,
+text VARCHAR(60),
+mal_code VARCHAR(30) NOT NULL,
+Constraint PK_INDICATION primary key (id),
+Constraint FK_INDICATION_MALADIE foreign key (mal_code) references maladie (code)
+);
