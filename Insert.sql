@@ -20,10 +20,10 @@ INSERT INTO medicament (id, nom, notice_url) VALUES (3, 'Dafalgan', NULL);
 INSERT INTO medicament (id, nom, notice_url) VALUES (4, 'Levothyrox', NULL);
 
 
-INSERT INTO effet_indesirable (id, text) VALUES (1, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.')
-INSERT INTO effet_indesirable (id, text) VALUES (2, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.')
-INSERT INTO effet_indesirable (id, text) VALUES (3, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.')
-INSERT INTO effet_indesirable (id, text) VALUES (4, 'Augmentation du rythme cardiaque.')
+INSERT INTO effet_indesirable (id, text) VALUES (1, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.');
+INSERT INTO effet_indesirable (id, text) VALUES (2, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.');
+INSERT INTO effet_indesirable (id, text) VALUES (3, 'Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.');
+INSERT INTO effet_indesirable (id, text) VALUES (4, 'Augmentation du rythme cardiaque.');
 
 
 INSERT INTO substance_active (id, nom, descrip) VALUES (1, 'Paracétamol', 'Le paracétamol est un médicament utilisé dans le traitement des douleurs légères à modérées et/ou dans les états fébriles.');
