@@ -14,10 +14,10 @@ INSERT INTO patient (n_pat, Nom, Prenom) VALUES(1, 'Dupont', 'Jean');
 INSERT INTO patient (n_pat, Nom, Prenom) VALUES(2, 'Jiji', 'Léa');
 
 
-INSERT INTO medicament (id, nom, notice_url) VALUES (1, "Doliprane", "");
-INSERT INTO medicament (id, nom, notice_url) VALUES (2, "Efferalgan", "");
-INSERT INTO medicament (id, nom, notice_url) VALUES (3, "Dafalgan", "");
-INSERT INTO medicament (id, nom, notice_url) VALUES (4, "Levothyrox", "");
+INSERT INTO medicament (id, nom, notice_url) VALUES (1, "Doliprane", "", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (2, "Efferalgan", "", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (3, "Dafalgan", "", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (4, "Levothyrox", "", NULL);
 
 
 INSERT INTO effet_indesirable (id, text) VALUES (1, "Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.")
@@ -73,7 +73,14 @@ INSERT INTO maladies (Code, Nom) VALUES('C01.252.100', 'bactériémie');
 INSERT INTO maladies (Code, Nom) VALUES('C01.252.100.375', 'septicémie hémorragique');
 INSERT INTO maladies (Code, Nom) VALUES('C01.252.200', 'infections bactériennes du système nerveux central');
 INSERT INTO maladies (Code, Nom) VALUES('C01.252.200.100', 'abcès cérébral');
-INSERT INTO maladies (Code, Nom) VALUES('C02', 'maladies virales');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.343', 'encéphalite à arbovirus');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.340', 'encéphalite de californie');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.345', 'encéphalite japonaise');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.350', 'encéphalite de Saint-Louis');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.355', 'encéphalomyélite équine');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.177', "encéphalomyélite équine de l'Est");
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.355', 'encéphalomyélite équine du vénézuéla');
+INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.677', "encéphalomyélite équine de l'Ouest");
 INSERT INTO maladies (Code, Nom) VALUES('C02.081', 'infections à arbovirus');
 INSERT INTO maladies (Code, Nom) VALUES('C02.081.030', 'peste équine');
 INSERT INTO maladies (Code, Nom) VALUES('C02.081.125', 'fièvre catarrhale du mouton');
