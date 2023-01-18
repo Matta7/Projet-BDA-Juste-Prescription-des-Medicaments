@@ -119,7 +119,7 @@ Constraint FK_TRAIT_MED_MEDIC foreign key (medic_id) references medicament (id)
 -- A revoir ?
 CREATE TABLE indication 
 (id NUMBER NOT NULL,
-text VARCHAR(120),
+text VARCHAR(300),
 mal_code VARCHAR(30) NOT NULL,
 medic_id NUMBER NOT NULL,
 Constraint PK_INDICATION primary key (id),
