@@ -1,3 +1,4 @@
+-- 1ère procédure
 CREATE OR REPLACE PROCEDURE deduce (id_obs NUMBER) 
 IS 
 BEGIN
@@ -14,6 +15,7 @@ BEGIN
 END;
 /
 
+-- 2ème procédure
 CREATE OR REPLACE PROCEDURE meds_for_disease(name maladie.nom%TYPE) IS
 var number;
 BEGIN
@@ -50,6 +52,36 @@ BEGIN
 END;
 /
 
+
+-- 3.Une fonction/procedure qui permet de sauvegarder le patient, son traitement (l’ensemble du ou des m ́edicaments et/ou recommandations) et la ou les maladies diagnostiquees par un medecin. Pour contrôler les prescriptions, le système ne doit pas autoriser un medecin à prescrire un medicament pour lequel il a participé l’élaboration. Lancez les messages d’erreurs adequats à l’utilisateur.
+
+CREATE OR REPLACE PROCEDURE saveData (p_nom VARCHAR, p_prenom VARCHAR, p_date_debut DATE, p_date_fin DATE, p_n_med NUMBER, p_n_medics medicament.id%ROWTYPE, p_mal_codes maladie.Code%ROWTYPE)
+AS r_id_pat NUMBER; r_id_trait NUMBER;
+BEGIN
+	SELECT MAX(n_pat)+1 INTO r_id_pat FROM patient;
+	SELECT MAX(id)+1 INTO r_id_trait FROM traitement;
+
+	INSERT INTO patient (n_pat, Nom, Prenom) VALUES (r_id_pat, p_nom, p_prenom);
+	INSERT INTO traitement(id, Date_debut, Date_fin, n_Med, n_pat) VALUES (r_id_trait, p_data_debut, p_date_fin, p_n_med, r_id_pat);
+
+	FOR row IN (
+	p_n_medics
+	) LOOP
+	IF p_n_med = (SELECT n_med FROM developpe WHERE n_med = p_n_med AND medic_id = row) THEN
+	dbms_output.put_line('Le médicament ' || to_char(row) ||' ne peut être prescrit car le médecin a développé le médicament.');
+	ELSE
+	INSERT INTO trait_med (trait_id, medic_id) VALUES (r_id_trait, row);
+	END IF;
+	END LOOP;
+
+	FOR rowm IN (p_mal_codes) LOOP
+	INSERT INTO chronique (n_pat, mal_code) VALUES (r_id_pat, rowm);
+	END LOOP;
+END;
+/
+
+
+-- 4ème procédure
 CREATE OR REPLACE PROCEDURE side_effects_of(med_id medicament.id%TYPE) IS
 varx medicament.nom%TYPE;
 notice medicament.notice_url%TYPE;
@@ -94,5 +126,19 @@ BEGIN
 	) LOOP
 	DBMS_OUTPUT.PUT_LINE(row.text);
 	END LOOP;
+END;
+/
+
+
+-- 5. Une fonction / procédure qui permet pour chaque médecin de connaître la liste de tous les médicaments qu'il a prescrits.
+
+CREATE OR REPLACE PROCEDURE medicList (p_med NUMBER)
+AS
+BEGIN
+	FOR row IN (
+	SELECT medic.nom
+	FROM medicament medic, trait_med tm, traitement t
+	WHERE medic.id = tm.medic_id AND tm.trait_id = t.id AND t.n_Med = p_med
+	) LOOP dbms_output.put_line(row.nom); END LOOP;
 END;
 /
