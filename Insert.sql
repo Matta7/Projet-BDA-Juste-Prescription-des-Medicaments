@@ -43,9 +43,9 @@ INSERT INTO effet_connus_m (id, medic_id) VALUES (4, 4);
 
 
 INSERT INTO substance_contenu (medic_id, subs_id) VALUES (1, 1);
-INSERT INTO substance_contenu (medic_id, subs_id) VALUES (1, 2);
-INSERT INTO substance_contenu (medic_id, subs_id) VALUES (1, 3);
-INSERT INTO substance_contenu (medic_id, subs_id) VALUES (2, 4);
+INSERT INTO substance_contenu (medic_id, subs_id) VALUES (2, 1);
+INSERT INTO substance_contenu (medic_id, subs_id) VALUES (3, 1);
+INSERT INTO substance_contenu (medic_id, subs_id) VALUES (4, 2);
 
 
 INSERT INTO classe_pharmacologique (code, parent) VALUES ('Antalgiques', 'Antalgiques');
