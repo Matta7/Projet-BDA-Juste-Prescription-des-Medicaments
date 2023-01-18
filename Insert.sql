@@ -48,9 +48,9 @@ INSERT INTO substance_contenu (medic_id, subs_id) VALUES (3, 1);
 INSERT INTO substance_contenu (medic_id, subs_id) VALUES (4, 2);
 
 
-INSERT INTO classe_pharmacologique (code, parent) VALUES ('Antalgiques', 'Antalgiques');
+INSERT INTO classe_pharmacologique (code, parent) VALUES ('Antalgiques', NULL);
 INSERT INTO classe_pharmacologique (code, parent) VALUES ('Antalgiques non opiacés', 'Antalgiques');
-INSERT INTO classe_pharmacologique (code, parent) VALUES ('Endocrinologie', 'Endocrinologie');
+INSERT INTO classe_pharmacologique (code, parent) VALUES ('Endocrinologie', NULL);
 INSERT INTO classe_pharmacologique (code, parent) VALUES ('Médicaments de la thyroïde', 'Endocrinologie');
 
 
