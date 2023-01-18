@@ -64,7 +64,7 @@ INSERT INTO effet_connus_p (id, pharm_code) VALUES (3, 'Antalgiques non opiacés
 INSERT INTO effet_connus_p (id, pharm_code) VALUES (4, 'Médicaments de la thyroïde');
 
 
-INSERT INTO maladies (Code, Nom) VALUES('C', 'maladies')
+INSERT INTO maladies (Code, Nom) VALUES('C', 'maladies');
 INSERT INTO maladies (Code, Nom) VALUES('C01', 'infections bactériennes et mycoses');
 INSERT INTO maladies (Code, Nom) VALUES('C01.252', 'infections bactériennes');
 INSERT INTO maladies (Code, Nom) VALUES('C01.252.100', 'bactériémie');
