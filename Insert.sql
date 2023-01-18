@@ -135,3 +135,13 @@ INSERT INTO developpe (n_med, medic_id) VALUES (2, 1);
 INSERT INTO developpe (n_med, medic_id) VALUES (2, 3);
 INSERT INTO developpe (n_med, medic_id) VALUES (1, 2);
 INSERT INTO developpe (n_med, medic_id) VALUES (2, 4);
+
+
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (1, 'Efficace pour les maux de têtes', 'C02.081.125', 1);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (2, 'Efficace pour les maux de têtes', 'C02.081.343.340', 1);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (3, 'Efficace pour les maux de têtes', 'C02.081.355.355', 1);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (4, 'Efficace pour les maux de ventre', 'C01.252.200.100', 2);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (5, 'Efficace pour les maux de ventre', 'C02.081.125', 2);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (6, 'Efficace pour les maux de gorge', 'C02.081.343', 3);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (7, 'Efficace pour les maux de ventre', 'C02.081.030', 3);
+INSERT INTO indication (id, text, mal_code, medic_id) VALUES (8, 'Efficace pour les maux', 'C02.081.343.350', 4);
