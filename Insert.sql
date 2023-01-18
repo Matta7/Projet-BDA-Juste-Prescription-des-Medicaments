@@ -64,25 +64,25 @@ INSERT INTO effet_connus_p (id, pharm_code) VALUES (3, 'Antalgiques non opiacés
 INSERT INTO effet_connus_p (id, pharm_code) VALUES (4, 'Médicaments de la thyroïde');
 
 
-INSERT INTO maladies (Code, Nom) VALUES('C', 'maladies');
-INSERT INTO maladies (Code, Nom) VALUES('C01', 'infections bactériennes et mycoses');
-INSERT INTO maladies (Code, Nom) VALUES('C01.252', 'infections bactériennes');
-INSERT INTO maladies (Code, Nom) VALUES('C01.252.100', 'bactériémie');
-INSERT INTO maladies (Code, Nom) VALUES('C01.252.100.375', 'septicémie hémorragique');
-INSERT INTO maladies (Code, Nom) VALUES('C01.252.200', 'infections bactériennes du système nerveux central');
-INSERT INTO maladies (Code, Nom) VALUES('C01.252.200.100', 'abcès cérébral');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.343', 'encéphalite à arbovirus');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.340', 'encéphalite de californie');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.345', 'encéphalite japonaise');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.343.350', 'encéphalite de Saint-Louis');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.355', 'encéphalomyélite équine');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.177', 'encéphalomyélite équine de l Est');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.355', 'encéphalomyélite équine du vénézuéla');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.355.677', 'encéphalomyélite équine de l Ouest');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081', 'infections à arbovirus');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.030', 'peste équine');
-INSERT INTO maladies (Code, Nom) VALUES('C02.081.125', 'fièvre catarrhale du mouton');
-INSERT INTO maladies (Code, Nom) VALUES('C02.109', 'bronchiolite virale');
+INSERT INTO maladie (Code, Nom) VALUES('C', 'maladies');
+INSERT INTO maladie (Code, Nom) VALUES('C01', 'infections bactériennes et mycoses');
+INSERT INTO maladie (Code, Nom) VALUES('C01.252', 'infections bactériennes');
+INSERT INTO maladie (Code, Nom) VALUES('C01.252.100', 'bactériémie');
+INSERT INTO maladie (Code, Nom) VALUES('C01.252.100.375', 'septicémie hémorragique');
+INSERT INTO maladie (Code, Nom) VALUES('C01.252.200', 'infections bactériennes du système nerveux central');
+INSERT INTO maladie (Code, Nom) VALUES('C01.252.200.100', 'abcès cérébral');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.343', 'encéphalite à arbovirus');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.343.340', 'encéphalite de californie');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.343.345', 'encéphalite japonaise');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.343.350', 'encéphalite de Saint-Louis');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.355', 'encéphalomyélite équine');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.355.177', 'encéphalomyélite équine de l Est');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.355.355', 'encéphalomyélite équine du vénézuéla');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.355.677', 'encéphalomyélite équine de l Ouest');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081', 'infections à arbovirus');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.030', 'peste équine');
+INSERT INTO maladie (Code, Nom) VALUES('C02.081.125', 'fièvre catarrhale du mouton');
+INSERT INTO maladie (Code, Nom) VALUES('C02.109', 'bronchiolite virale');
 
 
 INSERT INTO traitement (id, Date_debut, Date_fin, n_Med, n_pat) VALUES(1, TO_DATE('17/12/2015', 'DD/MM/YYYY'), TO_DATE('25/12/2015', 'DD/MM/YYYY'), 1, 1);
