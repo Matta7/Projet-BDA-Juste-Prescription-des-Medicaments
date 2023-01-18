@@ -55,8 +55,6 @@ INSERT INTO classe_pharmacologique (code, parent) VALUES ('Médicaments de la th
 
 
 INSERT INTO substance_pharmacologique (code, subs_id) VALUES ('Antalgiques non opiacés', 1);
-INSERT INTO substance_pharmacologique (code, subs_id) VALUES ('Antalgiques non opiacés', 1);
-INSERT INTO substance_pharmacologique (code, subs_id) VALUES ('Antalgiques non opiacés', 1);
 INSERT INTO substance_pharmacologique (code, subs_id) VALUES ('Médicaments de la thyroïde', 2);
 
 
