@@ -88,7 +88,7 @@ Constraint PK_LABORATOIRE primary key (n_labo)
 CREATE TABLE medicament
 (id NUMBER NOT NULL,
 nom VARCHAR(60),
-notice_url VARCHAR(60),
+notice_url VARCHAR(70),
 Constraint PK_MEDICAMENT primary key (id)
 );
 
@@ -128,7 +128,7 @@ Constraint FK_INDICATION_MALADIE foreign key (mal_code) references maladie (code
 );
 
 CREATE TABLE contre_indication
-(text VARCHAR(120),
+(text VARCHAR(300),
 medic_id NUMBER NOT NULL,
 Constraint PK_CONTRE_INDICATION primary key (text, medic_id),
 Constraint FK_CONTRE_INDICATION_MED foreign key (medic_id) references medicament (id)
@@ -136,14 +136,14 @@ Constraint FK_CONTRE_INDICATION_MED foreign key (medic_id) references medicament
 
 CREATE TABLE effet_indesirable
 (id NUMBER NOT NULL,
-text VARCHAR(120),
+text VARCHAR(300),
 Constraint PK_EFFET_INDESIRABLE primary key (id)
 );
 
 CREATE TABLE substance_active
 (id NUMBER NOT NULL,
 nom VARCHAR(30),
-descrip VARCHAR(120),
+descrip VARCHAR(300),
 Constraint PK_SUBSTANCE_ACTIVE primary key (id)
 );
 
