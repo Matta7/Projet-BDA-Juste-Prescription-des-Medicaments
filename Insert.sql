@@ -145,3 +145,12 @@ INSERT INTO indication (id, text, mal_code, medic_id) VALUES (5, 'Efficace pour 
 INSERT INTO indication (id, text, mal_code, medic_id) VALUES (6, 'Efficace pour les maux de gorge', 'C02.081.343', 3);
 INSERT INTO indication (id, text, mal_code, medic_id) VALUES (7, 'Efficace pour les maux de ventre', 'C02.081.030', 3);
 INSERT INTO indication (id, text, mal_code, medic_id) VALUES (8, 'Efficace pour les maux', 'C02.081.343.350', 4);
+
+
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas mettre à porter des enfants', 1);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas mettre à porter des enfants', 2);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas mettre à porter des enfants', 3);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas utiliser chez une femme enceinte', 2);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas mettre dans le nez', 4);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Ne pas mettre dans les yeux', 3);
+INSERT INTO contre_indication (text, medic_id) VALUES ('Attention à bien doser', 1);
