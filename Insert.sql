@@ -14,10 +14,10 @@ INSERT INTO patient (n_pat, Nom, Prenom) VALUES(1, 'Dupont', 'Jean');
 INSERT INTO patient (n_pat, Nom, Prenom) VALUES(2, 'Jiji', 'Léa');
 
 
-INSERT INTO medicament (id, nom, notice_url) VALUES (1, "Doliprane", "", NULL);
-INSERT INTO medicament (id, nom, notice_url) VALUES (2, "Efferalgan", "", NULL);
-INSERT INTO medicament (id, nom, notice_url) VALUES (3, "Dafalgan", "", NULL);
-INSERT INTO medicament (id, nom, notice_url) VALUES (4, "Levothyrox", "", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (1, "Doliprane", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (2, "Efferalgan", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (3, "Dafalgan", NULL);
+INSERT INTO medicament (id, nom, notice_url) VALUES (4, "Levothyrox", NULL);
 
 
 INSERT INTO effet_indesirable (id, text) VALUES (1, "Augmentation de la transpiration, une augmentation du flux sanguin cutané et une perte de chaleur.")
